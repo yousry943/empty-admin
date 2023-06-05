@@ -1,11 +1,11 @@
 
 
-![logo](https://i.imgur.com/Xnu0l9w.jpg)
+
 
     
-# About Lara Starter
+# About 
 
-Lara Starter is highly capable and customizable 
+ is highly capable and customizable 
 Laravel Starter pack. It provides you some powerful and handy
 features out of the box. All you have to do just set up it.
 
@@ -62,7 +62,7 @@ Password: `password`
 you can create role and Permission via Gui it really easy to use.
 the GUI base on [Spatie Permission](https://spatie.be/docs/laravel-permission/v3/installation-laravel)
 . so its works like same as spaite permission's documentation says.
-but `Lara Starter` has some own command alongside it. Let's see
+but `` has some own command alongside it. Let's see
 some basic handy commands.
 
 ---
@@ -111,11 +111,11 @@ and add a flag of `--delete` and the name of the permission.
 After creating all the permissions now you can assign those permissions under a specific Role. Just go to Admin panel and go to `Access Control` then `Roles` you will find
 a `+Add Role` Button one at the top. Click there to define a Role name and click one the permissions you like to assign for this particular role that's all.
 
-> By default lara starter comes with an inbuild Super Admin Role. All kinds of permissions will automatically be assigned to the Super Admin.
+> By default  comes with an inbuild Super Admin Role. All kinds of permissions will automatically be assigned to the Super Admin.
 
 ## Use Role or Permission on Middleware:
 
-The first thing that you have to know that Lara Starter Authentication by default uses a `admin guard`.
+The first thing that you have to know that  Authentication by default uses a `admin guard`.
 so be careful when you are defining Middleware you have to remember that you have to pass `guard` name with it
 or Middleware won't work.
 
@@ -240,7 +240,7 @@ $ php artisan scrap:view products --resource
 
 # Dynamic Validation error showing:
 suppose you don't want to validate a form and you don't want to take pain for showing errors in the frontend.
-thats why to make easy you work lara starter have a way to handle you validate error'.
+thats why to make easy you work  have a way to handle you validate error'.
 
 goto .env and make add `SWEET_TOAST_FOR_ERROR=true`
 
