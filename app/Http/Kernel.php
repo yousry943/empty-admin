@@ -37,6 +37,7 @@ class Kernel extends HttpKernel
       \Illuminate\View\Middleware\ShareErrorsFromSession::class,
       \App\Http\Middleware\VerifyCsrfToken::class,
       \Illuminate\Routing\Middleware\SubstituteBindings::class,
+      
     ],
 
     'api' => [
@@ -55,6 +56,7 @@ class Kernel extends HttpKernel
   protected $routeMiddleware = [
     'admin.auth' => \App\Http\Middleware\RedirectIfNotAdmin::class,
     'admin.guest' => \App\Http\Middleware\RedirectIfAdmin::class,
+    
     // 'admin.verified' => \App\Http\Middleware\EnsureAdminEmailIsVerified::class,
     // 'admin.password.confirm' => \App\Http\Middleware\RequireAdminPassword::class,
     'auth' => \App\Http\Middleware\Authenticate::class,
@@ -66,9 +68,32 @@ class Kernel extends HttpKernel
     'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
     'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
     'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-
     'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
     'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
     'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
+  
+    'dashauth' => \App\Http\Middleware\DashboardAuthenticate::class,
+    'dashboardauth' => \App\Http\Middleware\DashboardRedirectIfNotUser::class,
+    'dashboardguest' => \App\Http\Middleware\DashboardRedirectIfUser::class,
+  
+  ];
+
+  protected $dashboardMiddleware = [
+  //   // 'admin.verified' => \App\Http\Middleware\EnsureAdminEmailIsVerified::class,
+  //   // 'admin.password.confirm' => \App\Http\Middleware\RequireAdminPassword::class,
+  //   'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+  //   'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
+  //   'can' => \Illuminate\Auth\Middleware\Authorize::class,
+  //   'guest' => \App\Http\Middleware\Dashboard\RedirectIfAuthenticated::class,
+  //   'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
+  //   'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
+  //   'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+  //   'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+  //   // 'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
+  //   // 'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
+  //   // 'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,
   ];
 }
+
+

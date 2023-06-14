@@ -22,6 +22,14 @@ use App\Http\Controllers\Backend\SettingsController;
 Route::get('/', function () {
     return redirect('/admin');
 });
+Route::get('dashboard/employee',function () {
+  return view('/frontend/dashboard/pages/employee/index');
+})->name('dashboard.employee');
+
+Route::get('dashboard/employee/create',function () {
+  return view('/frontend/dashboard/pages/employee/create');
+})->name('dashboard.employee.create');
+
 
 /*
 |--------------------------------------------------------------------------

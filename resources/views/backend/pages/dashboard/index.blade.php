@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('content')
-<div class="header bg-primary pb-6">
+<div class="header pb-6">
   <div class="container-fluid">
     <div class="header-body">
       <!-- Card stats -->
@@ -107,7 +107,7 @@
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-dark table-flush">
-            <thead class="thead-dark">
+            <thead class="">
               <tr>
                 <th scope="col" class="sort" data-sort="name">Project</th>
                 <th scope="col" class="sort" data-sort="budget">Budget</th>

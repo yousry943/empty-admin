@@ -41,12 +41,12 @@
               </td>
 
               <td>
-               @foreach ($user->getRoleNames() as $roleName)
-               @if ($user->hasRole('super-admin'))
-               <i class="fas fa-crown text-warning"></i> 
-               @endif
-               <span class="badge badge-success"><b> {{ $roleName }}</b></span>   
-               @endforeach
+                @foreach ($user->getRoleNames() as $roleName)
+                @if ($user->hasRole('super-admin'))
+                <i class="fas fa-crown text-warning"></i> 
+                @endif
+                <span class="badge badge-success"><b> {{ $roleName }}</b></span>   
+                @endforeach
               </td>
 
               @if ($user->id == 1)
