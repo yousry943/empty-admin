@@ -2620,8 +2620,8 @@ pre code
 
 .table-dark
 {
-    color: #f8f9fe;
-    background-color: #007bff;
+    color: #525f7f;
+    background-color: #fff;
 }
 .table-dark th,
 .table-dark td,
@@ -8915,7 +8915,7 @@ button.bg-dark:focus
 
 .bg-default
 {
-    background-color: #007bff !important;
+    background-color: #fff !important;
 }
 .my-bg{
     background-color: #f4f6f9 !important;
@@ -21423,7 +21423,7 @@ textarea[resize='horizontal']
 .navbar-vertical.navbar-light
 {
     border-color: rgba(0, 0, 0, .05); 
-    background-color: #f6f9fc;
+    background-color: #fff;
 }
 .navbar-vertical.navbar-dark
 {
