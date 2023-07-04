@@ -1,4 +1,5 @@
 @extends('backend.layouts.master')
+@section('title', 'Edit Admin users')
 
 @section('content')
 <div class="header bg-primary pb-6"></div>
@@ -10,12 +11,12 @@
           <h3 class="mb-0">Edit Admin User</h3>
         </div>
         <div class="col-4 text-right">
-          <a href="{{ route('admin.admin-user.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i> Go back</a>
+          <a href="{{ route('admin-user.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i> Go back</a>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <form action="{{ route('admin.admin-user.update', $adminUserEdit->id) }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('admin-user.update', $adminUserEdit->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="row">

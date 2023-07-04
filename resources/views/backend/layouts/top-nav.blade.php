@@ -82,11 +82,11 @@
             </a>
             <div class="dropdown-menu  dropdown-menu-right ">
               <div class="dropdown-header noti-title">
-                <h6 class="text-overflow m-0">Welcome!</h6>
+                <h6 class="text-overflow m-0">{{__('Admin.Welcome!')}}</h6>
               </div>
-              <a href="{{ route('admin.profile') }}" class="dropdown-item">
+              <a href="{{ route('profile') }}" class="dropdown-item">
                 <i class="ni ni-single-02"></i>
-                <span>My profile</span>
+                <span>{{__('Admin.My profile')}}</span>
               </a>
               <div class="dropdown-divider"></div>
               
@@ -94,7 +94,7 @@
                   onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                   <i class="ni ni-user-run"></i>
-                  <span>Logout</span>
+                  <span>{{__('Admin.Logout')}}</span>
               </a>
 
               <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">

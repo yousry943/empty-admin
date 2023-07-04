@@ -82,11 +82,11 @@
             </a>
             <div class="dropdown-menu  dropdown-menu-right ">
               <div class="dropdown-header noti-title">
-                <h6 class="text-overflow m-0">Welcome!</h6>
+                <h6 class="text-overflow m-0">{{__('Dashboard.Welcome!')}}</h6>
               </div>
               {{-- <a href="{{ route('user.profile') }}" class="dropdown-item"> --}}
-                <i class=" ml-3 ni ni-single-02"></i>
-                <span class="">My profile</span>
+                <i class=" mr-3 ni ni-single-02"></i>
+                <span class="">{{__('Dashboard.My profile')}}</span>
               </a>
               <div class="dropdown-divider"></div>
               
@@ -94,14 +94,16 @@
                   onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                   <i class="ni ni-user-run"></i>
-                  <span>Logout</span>
-              </a>
+                  <span>{{__('Dashboard.Logout')}}</span>
+              </a> 
 
               <form id="logout-form" action="{{ route('dashboard.logout') }}" method="POST" style="display: none;">
                   @csrf
               </form>
             </div>
+            
           </li>
+          
         </ul>
       </div>
     </div>

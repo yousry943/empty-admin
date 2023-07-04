@@ -61,7 +61,7 @@ class RoleController extends Controller
     $role->syncPermissions($request->permissions);
     /** sweet alert */
     toast('Role has been created!', 'success')->width('23rem');
-    return redirect()->route('admin.role.index');
+    return redirect()->route('role.index');
   }
 
   /**
@@ -98,6 +98,6 @@ class RoleController extends Controller
     $role->save();
     $role->syncPermissions($request->permissions);
     toast('Role has been Updated!', 'success')->width('23rem');
-    return redirect()->route('admin.role.index');
+    return redirect()->route('role.index');
   }
 }

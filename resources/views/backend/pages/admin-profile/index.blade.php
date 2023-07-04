@@ -1,4 +1,5 @@
 @extends('backend.layouts.master')
+@section('title', 'Admin Profile')
 
 @section('content')
 <div class="main-content" id="panel">
@@ -21,8 +22,8 @@
           </div>
           <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
             <div class="d-flex justify-content-between">
-              <a href="#" class="btn btn-sm btn-info  mr-4 ">Connect</a>
-              <a href="#" class="btn btn-sm btn-default float-right">Message</a>
+              <a href="#" class="btn btn-sm btn-info  mr-4 ">{{__('Admin.Connect')}}</a>
+              <a href="#" class="btn btn-sm btn-default float-right">{{__('Admin.Message')}}</a>
             </div>
           </div>
           <div class="card-body pt-0">
@@ -31,15 +32,15 @@
                 <div class="card-profile-stats d-flex justify-content-center">
                   <div>
                     <span class="heading">0</span>
-                    <span class="description">Extra</span>
+                    <span class="description">{{__('Admin.Extra')}}</span>
                   </div>
                   <div>
                     <span class="heading">0</span>
-                    <span class="description">Extra</span>
+                    <span class="description">{{__('Admin.Extra')}}</span>
                   </div>
                   <div>
                     <span class="heading">0</span>
-                    <span class="description">Extra</span>
+                    <span class="description">{{__('Admin.Extra')}}</span>
                   </div>
                 </div>
               </div>
@@ -60,41 +61,41 @@
           <div class="card-header">
             <div class="row align-items-center">
               <div class="col-8">
-                <h3 class="mb-0">Edit Profile</h3>
+                <h3 class="mb-0">{{__('Admin.Edit Profile')}}</h3>
               </div>
               <div class="col-4 text-right">
                 <a href="" onclick="event.preventDefault()" class="btn btn-sm btn-primary send"><i
-                    class="fas fa-save"></i> Save</a>
+                    class="fas fa-save ml-1 mr-1"></i>{{__('Admin.Save')}} </a>
               </div>
             </div>
           </div>
           <div class="card-body">
-            <form class="form" action="{{ route('admin.profile.update', [$profile->id]) }}" method="POST" enctype="multipart/form-data">
+            <form class="form" action="{{ route('profile.update', [$profile->id]) }}" method="POST" enctype="multipart/form-data">
               @csrf
               @method('PUT')
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <label for="exampleFormControlInput1">Name</label>
+                    <label for="exampleFormControlInput1">{{__('Admin.Name')}}</label>
                     <input name="name" type="text" class="form-control" id="exampleFormControlInput1" value="{{ $profile->name }}">
                   </div>
                 </div>
                 <div class="col-md-6 ">
                   <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">{{__('Admin.Email')}}</label>
                     <input name="email" type="text" class="form-control" id="email" value="{{ $profile->email }}">
                   </div>
                 </div>
                 <div class="col-md-6 ">
                   <div class="form-group mb-0">
-                    <label for="password">Password</label>
+                    <label for="password">{{__('Admin.Password')}}</label>
                     <input name="password" type="password" class="form-control" id="password"
                       placeholder="">
                   </div>
                 </div>
                 <div class="col-md-6 ">
                   <div class="form-group mb-0">
-                    <label for="c-password">Confirm Password</label>
+                    <label for="c-password">{{__('Admin.Confirm Password')}}</label>
                     <input name="password_confirmation" type="password" class="form-control" id="c-password"
                       placeholder="">
                     <br>
@@ -102,10 +103,10 @@
                 </div>
               </div>
               <div class="form-group">
-                <label for="">Avater</label>
+                <label for="">{{__('Admin.Avater')}}</label>
                 <div class="custom-file">
                   <input onchange="document.getElementById('profile').src = window.URL.createObjectURL(this.files[0])" name="avatar" type="file" class="custom-file-input" id="customFileLang" lang="en">
-                  <label class="custom-file-label" for="customFileLang">Avatar</label>
+                  <label class="custom-file-label" for="customFileLang">{{__('Admin.Avatar')}}</label>
                 </div>
               </div>
             </form>

@@ -30,6 +30,5 @@ class AppServiceProvider extends ServiceProvider
         if(request()->is('backup')){
            return abort(404);
         }
-
     }
 }

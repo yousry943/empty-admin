@@ -75,6 +75,11 @@ class Kernel extends HttpKernel
     'dashauth' => \App\Http\Middleware\DashboardAuthenticate::class,
     'dashboardauth' => \App\Http\Middleware\DashboardRedirectIfNotUser::class,
     'dashboardguest' => \App\Http\Middleware\DashboardRedirectIfUser::class,
+    'localize'                => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
+    'localizationRedirect'    => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
+    'localeSessionRedirect'   => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
+    'localeCookieRedirect'    => \Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class,
+    'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class
   
   ];
 

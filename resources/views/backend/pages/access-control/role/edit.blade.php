@@ -1,4 +1,5 @@
 @extends('backend.layouts.master')
+@section('title', ' Edit Role')
 
 @section('content')
 <div class="header bg-primary pb-6"></div>
@@ -12,12 +13,12 @@
           <h3 class="mb-0">Update Role</h3>
         </div>
         <div class="col-4 text-right">
-          <a href="{{ route('admin.role.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i> Go back</a>
+          <a href="{{ route('role.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i> Go back</a>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <form action="{{ route('admin.role.update', $editRole->id) }}" method="POST">
+      <form action="{{ route('role.update', $editRole->id) }}" method="POST">
         @csrf
         @method('PUT')
         <div class="pl-lg-4">

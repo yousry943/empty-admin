@@ -21565,7 +21565,7 @@ textarea[resize='horizontal']
     {
         height: 100%; 
         min-height: none;
-    }
+    }  
 }
 .navbar-vertical.navbar-expand-xs.fixed-left
 {

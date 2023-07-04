@@ -94,10 +94,10 @@ body
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-
+    direction: rtl;
     margin: 0;
 
-    text-align: left;
+    text-align: right;
 
     color: #525f7f;
     background-color: #f8f9fe;
@@ -4495,7 +4495,7 @@ input[type='button'].btn-block
 
     list-style: none;
 
-    text-align: left;
+    text-align: right;
 
     color: #525f7f;
     border: 0 solid rgba(0, 0, 0, .15);
@@ -4513,8 +4513,8 @@ input[type='button'].btn-block
 
 .dropdown-menu-right
 {
-    right: 0;
-    left: auto;
+    right: auto;
+    left: 0;
 }
 
 @media (min-width: 576px)
@@ -5854,7 +5854,7 @@ input[type='button'].btn-block
     flex-direction: column;
 
     margin-bottom: 0;
-    padding-left: 0;
+    padding-right: 0;
 
     list-style: none;
 }
@@ -10574,7 +10574,7 @@ button.bg-darker:focus
 .ml-2,
 .mx-2
 {
-    margin-left: .5rem !important;
+    margin-right: .5rem !important;
 }
 
 .m-3
@@ -10591,7 +10591,7 @@ button.bg-darker:focus
 .mr-3,
 .mx-3
 {
-    margin-right: 1rem !important;
+    margin-left: 1rem !important;
 }
 
 .mb-3,
@@ -14883,7 +14883,7 @@ button.bg-darker:focus
     .ml-md-auto,
     .mx-md-auto
     {
-        margin-left: auto !important;
+        margin-right: auto !important;
     }
 }
 
@@ -17666,7 +17666,7 @@ button.bg-darker:focus
 
 .text-right
 {
-    text-align: right !important;
+    text-align: left !important;
 }
 
 .text-center
@@ -21119,8 +21119,8 @@ textarea[resize='horizontal']
     }
     .navbar-horizontal .navbar-nav .dropdown-menu-right:before
     {
-        right: 20px;
-        left: auto;
+        right: auto;
+        left: 20px;
     }
     .navbar-horizontal .navbar-nav:not(.navbar-nav-hover) .dropdown-menu.show
     {
@@ -21587,9 +21587,9 @@ textarea[resize='horizontal']
 }
 .navbar-vertical.navbar-expand-xs.fixed-left
 {
-    left: 0;
+    right: 0;
 
-    border-width: 0 1px 0 0;
+    border-width: 0 0 0 1px;
 }
 .navbar-vertical.navbar-expand-xs.fixed-right
 {
@@ -21705,9 +21705,9 @@ textarea[resize='horizontal']
 {
     .navbar-vertical.navbar-expand-sm.fixed-left
     {
-        left: 0;
+        right: 0;
 
-        border-width: 0 1px 0 0;
+        border-width: 0 0 0 1px;
     }
     .navbar-vertical.navbar-expand-sm.fixed-right
     {
@@ -21824,9 +21824,9 @@ textarea[resize='horizontal']
 {
     .navbar-vertical.navbar-expand-md.fixed-left
     {
-        left: 0;
+        right: 0;
 
-        border-width: 0 1px 0 0;
+        border-width: 0 0 0 1px;
     }
     .navbar-vertical.navbar-expand-md.fixed-right
     {
@@ -21943,9 +21943,9 @@ textarea[resize='horizontal']
 {
     .navbar-vertical.navbar-expand-lg.fixed-left
     {
-        left: 0;
+        right: 0;
 
-        border-width: 0 1px 0 0;
+        border-width: 0 0 0 1px;
     }
     .navbar-vertical.navbar-expand-lg.fixed-right
     {
@@ -22062,9 +22062,9 @@ textarea[resize='horizontal']
 {
     .navbar-vertical.navbar-expand-xl.fixed-left
     {
-        left: 0;
+        right: 0;
 
-        border-width: 0 1px 0 0;
+        border-width: 0 0 0 1px;
     }
     .navbar-vertical.navbar-expand-xl.fixed-right
     {
@@ -22140,12 +22140,12 @@ textarea[resize='horizontal']
 
 .navbar-vertical.navbar-expand-xs.fixed-left + .main-content
 {
-    margin-left: 250px;
+    margin-right: 250px;
 }
 
 .navbar-vertical.navbar-expand-xs.fixed-right + .main-content
 {
-    margin-right: 250px;
+    margin-right: 62px;
 }
 
 @media (min-width: 576px)
@@ -22164,7 +22164,7 @@ textarea[resize='horizontal']
 {
     .navbar-vertical.navbar-expand-md.fixed-left + .main-content
     {
-        margin-left: 250px;
+        margin-right: 250px;
     }
     .navbar-vertical.navbar-expand-md.fixed-right + .main-content
     {
@@ -22176,7 +22176,7 @@ textarea[resize='horizontal']
 {
     .navbar-vertical.navbar-expand-lg.fixed-left + .main-content
     {
-        margin-left: 250px;
+        margin-right: 250px;
     }
     .navbar-vertical.navbar-expand-lg.fixed-right + .main-content
     {
@@ -22188,7 +22188,7 @@ textarea[resize='horizontal']
 {
     .navbar-vertical.navbar-expand-xl.fixed-left + .main-content
     {
-        margin-left: 250px;
+        margin-right: 250px;
     }
     .navbar-vertical.navbar-expand-xl.fixed-right + .main-content
     {
@@ -22198,7 +22198,7 @@ textarea[resize='horizontal']
 
 .sidenav.fixed-left + .main-content
 {
-    margin-left: 62px;
+    margin-right: 62px;
 
     transition: all .15s ease;
 }
@@ -22228,7 +22228,7 @@ textarea[resize='horizontal']
 {
     .g-sidenav-pinned .sidenav.fixed-left + .main-content
     {
-        margin-left: 250px;
+        margin-right: 250px;
     }
     .g-sidenav-pinned .sidenav.fixed-right + .main-content
     {
@@ -22327,7 +22327,7 @@ textarea[resize='horizontal']
     }
     .sidenav.fixed-left + .main-content
     {
-        margin-left: 0 !important;
+        margin-right: 0 !important;
     }
     .g-sidenav-pinned .sidenav
     {
@@ -22699,8 +22699,8 @@ textarea[resize='horizontal']
 
 .navbar .dropdown-menu-right:before
 {
-    right: 20px;
-    left: auto;
+    right: auto;
+    left: 20px;
 }
 
 .navbar:not(.navbar-nav-hover) .dropdown-menu.show

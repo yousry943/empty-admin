@@ -57,7 +57,7 @@ class LoginController extends Controller
     {
         return view('frontend.dashboard.user.auth.login');
     }
-
+    
     /**
      * Log the admin out of the application.
      *

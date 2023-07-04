@@ -8,10 +8,10 @@
       <!-- Card header -->
       <div class="card-header border-0">
         <div class="row">
-          <div class="col-6"><h3 class="mb-0">Admin Users</h3></div>
+          <div class="col-6"><h3 class="mb-0">{{__('Admin.Admin Users')}}</h3></div>
         <div class="col-6 text-right">
           @if (auth()->guard('admin')->user()->can('create-Admin-User'))
-          <a href="{{ route('admin.admin-user.create') }}" class="btn-sm btn-success"><b><i class="fas fa-plus"></i> Add New Admin</b></a>
+          <a href="{{ route('admin-user.create') }}" class="btn-sm btn-success"><b><i class="fas fa-plus"></i> {{__('Admin.Add New Admin')}}</b></a>
           @endif
         </div>
         </div>
@@ -21,11 +21,11 @@
         <table class="table align-items-center table-flush">
           <thead class="thead-light">
             <tr>
-              <th scope="col" class="sort" data-sort="name">No.</th>
-              <th scope="col" class="sort" data-sort="budget">Avatar</th>
-              <th scope="col" class="sort" data-sort="name">Name</th>
-              <th scope="col" class="sort" data-sort="name">Role</th>
-              <th scope="col">Action</th>
+              <th scope="col" class="sort" data-sort="name">{{__('Admin.No.')}}</th>
+              <th scope="col" class="sort" data-sort="budget">{{__('Admin.Avatar')}}</th>
+              <th scope="col" class="sort" data-sort="name">{{__('Admin.Name')}}</th>
+              <th scope="col" class="sort" data-sort="name">{{__('Admin.Role')}}</th>
+              <th scope="col">{{__('Admin.Action')}}</th>
             </tr>
           </thead>
           <tbody class="list">
@@ -51,23 +51,23 @@
 
               @if ($user->id == 1)
                 <td class="table-actions">
-                  <a href="{{ route('admin.admin-user.edit', $user->id) }}" class=" table-action-edit btn-sm disable btn-primary mr-3 " data-toggle="tooltip" data-original-title="Edit Role">
-                    <i class="fas fa-user-edit"></i> Edit
+                  <a href="{{ route('admin-user.edit', $user->id) }}" class=" table-action-edit btn-sm disable btn-primary mr-3 " data-toggle="tooltip" data-original-title="Edit Role">
+                    {{__('Admin.Edit')}}
                   </a>
-                  <a href="#!" wire:click.prevent="alertConfirm({{ $user->id }})" class="table-action-delete disable  btn-sm btn-danger" data-toggle="tooltip" data-original-title="Delete Role">
-                    <i class="fas fa-trash"></i> Delete
+                  <a href="#!" wire:click.prevent="alertConfirm({{ $user->id }})" class="table-action-delete disable ml-3 btn-sm btn-danger" data-toggle="tooltip" data-original-title="Delete Role">
+                    {{__('Admin.Delete')}}
                   </a>
                 </td>
               @else
                 <td class="table-actions">
                   @if (auth()->guard('admin')->user()->can('edit-Admin-User'))
-                  <a href="{{ route('admin.admin-user.edit', $user->id) }}" class=" table-action-edit btn-sm btn-primary mr-3 " data-toggle="tooltip" data-original-title="Edit Role">
-                    <i class="fas fa-user-edit"></i> Edit
+                  <a href="{{ route('admin-user.edit', $user->id) }}" class=" table-action-edit btn-sm btn-primary mr-3 " data-toggle="tooltip" data-original-title="Edit Role">
+                    {{__('Admin.Edit')}}
                   </a>
                   @endif
                   @if (auth()->guard('admin')->user()->can('delete-Admin-User'))
-                  <a href="#!" wire:click.prevent="alertConfirm({{ $user->id }})" class="table-action-delete  btn-sm btn-danger" data-toggle="tooltip" data-original-title="Delete Role">
-                    <i class="fas fa-trash"></i> Delete
+                  <a href="#!" wire:click.prevent="alertConfirm({{ $user->id }})" class="table-action-delete  ml-3 btn-sm btn-danger" data-toggle="tooltip" data-original-title="Delete Role">
+                    {{__('Admin.Delete')}}
                   </a>
                   @endif
               </td>

@@ -2,8 +2,8 @@
   <div class="scrollbar-inner">
     <!-- Brand -->
     <div class="sidenav-header  align-items-center">
-      <a class="navbar-brand" href="">
-        <img src={{ asset('frontend/assets/img/logoo.png') }} class="navbar-brand-img" alt="...">
+      <a class="navbar-brand" href="#">
+        <img src={{ asset("frontend/assets/img/easy-admin.png")}} class="navbar-brand-img" alt="...">
       </a>
     </div>
     <div class="navbar-inner">
@@ -14,7 +14,7 @@
           <li class="nav-item">
             <a class="nav-link " href="{{ route('dashboard.home') }}" role="button">
               <i class="fas fa-columns"></i>
-              <span class="nav-link-text">Dashboard</span>
+              <span class="nav-link-text">{{__('Dashboard.Dashboard')}}</span>
             </a>
           </li>
 
@@ -54,12 +54,33 @@
                 {{-- @if (auth('admin')->user()->hasAnyPermission(json_decode($parentItem->permissions)) or auth('admin')->user()->hasRole('super-admin')) --}}
                 <a class="nav-link " href="{{ route('dashboard.employee') }}" role="button">
                   <i class="fas fa-user-tie"></i>
-                  <span class="nav-link-text">Employee</span>
+                  <span class="nav-link-text">{{__('Dashboard.Employee')}}</span>
                 </a>
                 {{-- @endif --}}
               {{-- @endif --}}
             </li>
             {{-- @endforeach --}}
+          <li class="nav-item dropdown">
+            <a class="nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fab fa-adversal"></i>
+              {{__('Dashboard.Language')}}
+            </a>
+            <div class="dropdown-menu  dropdown-menu-left ">
+              <ul class="navbar-nav">
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <li class="nav-item mr-2 ml-2">
+                        <a rel="alternate" class="nav-link " hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                    </li>
+                @endforeach
+              </ul>
+
+            </div>
+            
+          </li>
+          
+
         </ul>
       </div>
     </div>

@@ -7,7 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
-
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -46,18 +46,29 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
-
-            Route::prefix('admin')
-                ->as('admin.')
-                ->middleware('web')
-                ->namespace('App\Http\Controllers\Backend\Admin')
-                ->group(base_path('routes/admin.php'));
-
-            Route::prefix('dashboard')
+                
+            Route::middleware('web')
+                ->group(base_path('routes/dashboard.php'))
                 ->as('dashboard.')
-                ->middleware('web')
-                ->namespace('App\Http\Controllers\Frontend\Dashboard')
-                ->group(base_path('routes/dashboard.php'));
+                ->namespace('App\Http\Controllers\Frontend\Dashboard');
+
+            Route::middleware('web')
+                ->group(base_path('routes/admin.php'))
+                ->as('admin.')
+                ->namespace('App\Http\Controllers\Backend\Admin');
+
+            // Route::prefix('admin')
+            //     ->as('admin.')
+            //     ->middleware('web')
+            //     ->namespace('App\Http\Controllers\Backend\Admin')
+            //     ->group(base_path('routes/admin.php'));
+
+            // Route::prefix('dashboard')
+            //     ->as('dashboard.')
+            //     ->middleware(['web', 'localize'])
+            //     ->namespace('App\Http\Controllers\Frontend\Dashboard')
+            //     ->group(base_path('routes/dashboard.php'));
+
         });
     }
 

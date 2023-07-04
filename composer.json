@@ -13,6 +13,7 @@
     "laravel/tinker": "^2.8",
     "laravel/ui": "^4.2",
     "livewire/livewire": "^2.12",
+    "mcamara/laravel-localization": "^1.8",
     "pavel-mironchik/laravel-backup-panel": "^2.2",
     "phpmailer/phpmailer": "^6.8",
     "realrashid/sweet-alert": "^7.0",
@@ -37,7 +38,9 @@
           "App\\": "app/",
           "Database\\Factories\\": "database/factories/",
           "Database\\Seeders\\": "database/seeders/"
-      }
+      }, "files": [
+        "app/helpers.php"
+      ]
   },
   "autoload-dev": {
       "psr-4": {

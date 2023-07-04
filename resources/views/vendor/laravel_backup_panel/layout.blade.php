@@ -1,4 +1,6 @@
 @extends('backend.layouts.master')
+@section('title', 'Backup')
+
 @section('extraCss')
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -13,9 +15,9 @@
     <div class="card">
         <div class="card-header border-1">
             <div class="row">
-            <div class="col-6"><h3 class="mb-0">Backup Manager</h3></div>
+            <div class="col-6"><h3 class="mb-0">{{__('Admin.Backup Manager')}}</h3></div>
                 <div class="col-6 text-right">
-                                            <button class="submit btn-sm btn-success"><b><i class="fas fa-save"></i>  Save Menu</b></button>
+                                            <button class="submit btn-sm btn-success"><b><i class="fas fa-save"></i> {{__('Admin.Save Menu')}} </b></button>
                 </div>
             </div>
         </div>

@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Dashboard|Login</title>
+  <title>{{ config('app.name') }} | Admin</title>
   <!-- Favicon -->
-  <link rel="icon" href="../assets/img/brand/favicon.png" type="image/png">
+  <link rel="icon" href={{ asset("backend/assets/img/easy-admin.png")}} type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
@@ -38,7 +38,7 @@
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <h1>Argon-Admin</h1>
+                <h1>{{ config('app.name') }} | Admin</h1>
               </div>
               <form method="POST" action="{{ route('admin.login') }}" aria-label="{{ __('Login') }}">
                 @csrf

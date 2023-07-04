@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 use App\Models\Admin;
 use File;
-
+ 
 class AdminProfileController extends Controller
 {
     public function index()
@@ -71,6 +71,6 @@ class AdminProfileController extends Controller
         }
         $admin->save();
         toast('Admin user updated!', 'success')->width('23rem');
-        return redirect()->route('admin.profile');
+        return redirect()->route('profile');
     }
 }

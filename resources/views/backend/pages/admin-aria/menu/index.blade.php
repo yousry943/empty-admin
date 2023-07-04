@@ -1,4 +1,5 @@
 @extends('backend.layouts.master')
+@section('title', 'Admin aria')
 @section('content')
 @section('extraCss')
 <link rel="stylesheet" href="{{ asset('backend/assets/vendor/nestable/nestable.css') }}">

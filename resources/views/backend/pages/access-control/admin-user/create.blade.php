@@ -1,4 +1,5 @@
 @extends('backend.layouts.master')
+@section('title', 'Create Admin users')
 
 @section('content')
 <div class="header bg-primary pb-6"></div>
@@ -10,12 +11,12 @@
           <h3 class="mb-0">Create Admin User</h3>
         </div>
         <div class="col-4 text-right">
-          <a href="{{ route('admin.admin-user.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i> Go back</a>
+          <a href="{{ route('admin-user.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i> Go back</a>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <form action="{{ route('admin.admin-user.store') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('admin-user.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
           <div class="col-md-6">

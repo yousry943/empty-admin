@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html >
 
 <head>
   <meta charset="utf-8">
@@ -7,9 +7,9 @@
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="author" content="Creative Tim">
-  <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+  <title>{{ config('app.name') }} | @yield('title')</title>
   <!-- Favicon -->
-  <link rel="icon" href="{{ asset('frontend/assets/img/brand/favicon.png') }}" type="image/png">
+  <link rel="icon" href="{{ asset("frontend/assets/img/easy-admin.png")}}" type="image/png">
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
   <!-- Icons -->
@@ -17,10 +17,16 @@
   <link rel="stylesheet" href="{{ asset('frontend/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
   <!-- Page plugins -->
   <!-- Argon CSS -->
-  <link rel="stylesheet" href="{{ asset('frontend/assets/css/argon.css?v=1.2.0') }}" type="text/css">
+  {{-- <link rel="stylesheet" href="{{ asset('frontend/assets/css/rtl-aragon.css?v=1.2.0') }}" type="text/css"> --}}
+
+  @if(\Mcamara\LaravelLocalization\Facades\LaravelLocalization::getCurrentLocale()=='ar')
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/rtl-aragon.css?v=1.2.0') }}" type="text/css">
+  @else
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/argon.css?v=1.2.0') }}" type="text/css">
+  @endif
   <!-- Extra css -->
   @yield('extraCss')
-   <!-- Errors -->
+  <!-- Errors -->
   @include('frontend.dashboard.errors.validation-error')
   <!-- Livewire css -->
   @livewireStyles
@@ -44,7 +50,7 @@
       <div class="row align-items-center justify-content-lg-between">
         <div class="col-lg-6">
           <div class="copyright text-center  text-lg-left  text-muted">
-            &copy; 2021 <a href="" class="font-weight-bold ml-1" target="_blank"> </a>
+            &copy; 2023 <a href="" class="font-weight-bold ml-1" target="_blank"> </a>
           </div>
         </div>
       </div>

@@ -8,10 +8,10 @@
           <!-- Card header -->
           <div class="card-header border-0">
             <div class="row">
-              <div class="col-6"><h3 class="mb-0">Roles</h3></div>
+              <div class="col-6"><h3 class="mb-0">{{__('Admin.Roles')}}</h3></div>
             <div class="col-6 text-right">
               @if (auth()->guard('admin')->user()->can('create-Role'))
-              <a href="{{ route('admin.role.create') }}" class="btn-sm btn-success"><b><i class="fas fa-plus"></i> Add Role</b></a>
+              <a href="{{ route('role.create') }}" class="btn-sm btn-success"><b><i class="fas fa-plus"></i> {{__('Admin.Add Role')}}</b></a>
               @endif
             </div>
             </div>
@@ -21,11 +21,11 @@
             <table class="table align-items-center table-flush">
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" class="sort" data-sort="name">No.</th>
-                  <th scope="col" class="sort" data-sort="budget">Role</th>
-                  <th scope="col" class="sort" data-sort="name">Role Users</th>
-                  <th scope="col" class="sort" data-sort="name">Permissions</th>
-                  <th scope="col">Action</th>
+                  <th scope="col" class="sort" data-sort="name">{{__('Admin.No.')}}</th>
+                  <th scope="col" class="sort" data-sort="budget">{{__('Admin.Role')}}</th>
+                  <th scope="col" class="sort" data-sort="name">{{__('Admin.Role Users')}}</th>
+                  <th scope="col" class="sort" data-sort="name">{{__('Admin.Permissions')}}</th>
+                  <th scope="col">{{__('Admin.Action')}}</th>
                 </tr>
               </thead>
               <tbody class="list">
@@ -67,14 +67,14 @@
                   </td>
                   <td class="table-actions">
                     @if (auth()->guard('admin')->user()->can('edit-Role'))
-                      <a href="{{ route('admin.role.edit', $role->id) }}" class=" table-action-edit btn-sm btn-primary mr-3
+                      <a href="{{ route('role.edit', $role->id) }}" class=" table-action-edit btn-sm btn-primary mr-3 ml-3"
                       @if ($role->name === 'super-admin') disable @endif" data-toggle="tooltip" data-original-title="Edit Role">
-                        <i class="fas fa-user-edit"></i> Edit
+                      {{__('Admin.Edit')}}
                       </a>
                     @endif
                     @if (auth()->guard('admin')->user()->can('delete-Role'))
-                      <a href="#!" wire:click.prevent="alertConfirm({{ $role->id }})" class="table-action-delete  btn-sm btn-danger @if ($role->name === 'super-admin') disable @endif" data-toggle="tooltip" data-original-title="Delete Role">
-                        <i class="fas fa-trash"></i> Delete
+                      <a href="#!" wire:click.prevent="alertConfirm({{ $role->id }})" class="table-action-delete  ml-3 btn-sm btn-danger @if ($role->name === 'super-admin') disable @endif" data-toggle="tooltip" data-original-title="Delete Role">
+                        {{__('Admin.Delete')}}
                       </a>
                     @endif
                   </td>
