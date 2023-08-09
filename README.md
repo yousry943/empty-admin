@@ -6,7 +6,7 @@
 # About 
 
  is highly capable and customizable 
-Laravel Starter pack. It provides you some powerful and handy
+ pack. It provides you some powerful and handy
 features out of the box. All you have to do just set up it.
 
 ## Wise Note
@@ -74,34 +74,8 @@ suppose you have a Blog model and you want to make 4 basic permission for it
 
 and guess what you can create this basic resource permission with a single command
 
-````bash
-php artisan lara:permissions Blog
-````
-first, you have to write `lara:permissions` then define your
-`model` name.
 
-**Note**: It's not like resource permission name have to be a model name
-you can give any name you want.
 
-## Making single permission:
-
-Now it's not like you always need
-resource permissions some time you will need single permission for that you must command
-
-````bash
-php artisan lara:permissions Blog --single=create
-
-````
-that will create a single permission called `createBlog`.
-first, define your `model` name then give a flag `--single`
-and then write what kind of permission you need.
-
-## Delete Permission:
-
-````bash
-php artisan lara:permission blog --delete=create
-
-````
 
 Deleting is the same as creating single permission. just you have to mention the `model` name
 and add a flag of `--delete` and the name of the permission.
